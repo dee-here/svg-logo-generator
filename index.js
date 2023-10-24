@@ -1,7 +1,6 @@
-console.log('Index.js !');
-
 const fs = require('fs');
 const {Shape, createShape} = require("./lib/shape");
+// const {Shape, createShape} = require("./lib/shape");
 
 const inquirer = require('inquirer');
 const promptQuestions = [
