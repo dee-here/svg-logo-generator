@@ -47,18 +47,7 @@ function writeToFile(fileName, data) {
 function init() {
   inquirer.prompt(promptQuestions)
   .then(answers => {
-      console.log('Answers are: ', answers);
-      // createShape(answers);
       writeToFile("./examples/logo.svg", createShape(answers));
-      // const testShape = new Shape(answers.shape, answers.shapeColor, answers.text, answers.textColor);
-      // console.log("testShape ", testShape);
-      // console.log(testShape.circle());
-      //call CreateSvg from shape.js and write it to file
-
-
-      // inquirer.prompt(questions).then((answers) => {
-      //   writeToFile("./examples/logo/svg", createSvg(answers));
-      // });
   });
 }
 
