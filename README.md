@@ -7,7 +7,7 @@ This is a Node.js command-line application that takes in user input to generate 
 
 
 ## screen Recording
-[SVG Logo Generator working clip](https://drive.google.com/file/d/1nnpTMY2PxdIZdecz0YEeRsn6bRjWZ_Yg/view)
+[SVG Logo Generator working clip](https://drive.google.com/file/d/1yodNP_UKkeh-KIkQmvjRJnrtpVoUyIwM/view)
 
 ## Technology Used 
 
