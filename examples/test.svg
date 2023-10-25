@@ -1,23 +1,10 @@
-<!-- <svg version="1.1" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="150" cy="100" r="80" fill="green" />
-  <text x="100" y="125" font-size="20" text-anchor="middle" fill="white">SVG</text>
-</svg>
-
-<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200">
-  <polygon points="100,10 10,190 190,190" fill="#FF5733" />
-  <text x="50%" y="60%" fill="white" text-anchor="middle" dominant-baseline="middle">GRT</text>
-</svg> -->
-
 <svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">
   <circle cx="150" cy="100" r="80" fill="#007bff" />
   <text x="150" y="105" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="40">CRC</text>
 </svg>
 
 <svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">
-  <!-- Triangle shape -->
   <polygon points="150,20 250,180 50,180" fill="#FF5733" />
-
-  <!-- Centered text -->
   <text x="50%" y="124" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="30">WQW</text>
 </svg>
 
