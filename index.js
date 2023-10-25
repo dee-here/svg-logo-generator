@@ -8,6 +8,7 @@ const promptQuestions = [
     type: "input",
     message: "Enter upto 3 characters for logo text",
     name: "text",
+    default: "",
     validate: data => data.length <=3,
   },
   {
