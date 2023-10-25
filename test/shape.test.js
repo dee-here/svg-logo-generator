@@ -13,8 +13,8 @@ const mockTriangleSvg =`<svg xmlns="http://www.w3.org/2000/svg" width="300" heig
 </svg>`;
 
 const mockSquareSvg =`<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">
-<rect x="50" y="50" width="200" height="200" fill="red" />
-<text x="150" y="130" text-anchor="middle" dominant-baseline="middle" fill="black" font-size="60">txt</text>
+<rect x="50" y="0" width="200" height="200" fill="red" />
+<text x="150" y="110" text-anchor="middle" dominant-baseline="middle" fill="black" font-size="60">txt</text>
 </svg>`;
 
 describe('Shape Class', () => {
