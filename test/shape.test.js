@@ -1,7 +1,24 @@
 const {createShape, Shape, Circle, Triangle, Square } = require('../lib/shape');
 
-describe('Shape', () => {
-    const shape = new Shape('red', 'TXT', 'white');
+
+//mock svgs created for shapeColor = red, text = txt,  textColor = black
+const mockCircleSvg =`<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">
+<circle cx="150" cy="100" r="80" fill="red" />
+<text x="150" y="105" text-anchor="middle" dominant-baseline="middle" fill="black" font-size="40">txt</text>
+</svg>`;
+
+const mockTriangleSvg =`<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">
+<polygon points="150,20 250,180 50,180" fill="red" />
+<text x="150" y="124" text-anchor="middle" dominant-baseline="middle" fill="black" font-size="30">txt</text>
+</svg>`;
+
+const mockSquareSvg =`<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">
+<rect x="50" y="50" width="200" height="200" fill="red" />
+<text x="150" y="130" text-anchor="middle" dominant-baseline="middle" fill="black" font-size="60">txt</text>
+</svg>`;
+
+describe('Shape Class', () => {
+    const shape = new Shape('red', 'txt', 'black');
     describe('Constructor', () => {
         it('should create an instance of Shape class', () => {
             expect(shape instanceof Shape).toBeTruthy();
@@ -10,76 +27,74 @@ describe('Shape', () => {
             expect(shape.shapeColor).toEqual('red');
         });
         it('should set right text', () => {
-            expect(shape.text).toEqual('TXT');
+            expect(shape.text).toEqual('txt');
         });
         it('should set right text color', () => {
-            expect(shape.textColor).toEqual('white');
+            expect(shape.textColor).toEqual('black');
         })
     });
     describe('Circle()', () => {
-        it('should return an svg that contains a circle tag', () => {
-            expect(shape.circle()).toContain('circle');
-        });
-        it('should return an svg that contains a text tag', () => {
-            expect(shape.circle()).toContain('text');
+        it('should return Circle svg markup', () => {
+            expect(shape.circle()).toEqual(mockCircleSvg);
         });
     });
     describe('Triangle()', () => {
-        it('should return an svg that contains a polygon tag', () => {
-            expect(shape.triangle()).toContain('polygon');
-        });
-        it('should return an svg that contains a text tag', () => {
-            expect(shape.triangle()).toContain('text');
+        it('should return Triangle svg markup', () => {
+            expect(shape.triangle()).toEqual(mockTriangleSvg);
         });
     });
     describe('Square()', () => {
-        it('should return an svg that contains a rect tag', () => {
-            expect(shape.square()).toContain('rect');
-        });
-        it('should return an svg that contains a text tag', () => {
-            expect(shape.square()).toContain('text');
-        });
+        it('should return Square svg markup', () => {
+            expect(shape.square()).toEqual(mockSquareSvg);
+        });;
     });
 });
 
-describe('createShape() for circle', () => {
-    describe('should create a Circle class if user selects Circle ', () => {
-        const circle = new Circle('red', 'txt', 'black');
-        it('should create an instance of Circle class', () => {
-            expect(circle instanceof Circle).toBeTruthy();
-        });
-        const data = {shape: 'Circle'};
+describe('createShape() when user selects Circle shape', () => {
+    describe('should create a Circle svg', () => {
+        const data = {shape: 'Circle', shapeColor: 'red', text: 'txt', textColor: 'black' };
         const createdCircle = createShape(data);
-        it('should return a circle in the svg', () => {
-            expect(createdCircle).toContain('circle');
+        it('should match the mock circle svg markup', () => {
+            expect(createdCircle).toEqual(mockCircleSvg);
         });
     });
 });
 
-describe('createShape() for Triangle', () => {
-    describe('should create a Triangle class if user selects triangle ', () => {
-        const triangle = new Triangle('red', 'txt', 'black');
-        it('should create an instance of Triangle class', () => {
-            expect(triangle instanceof Triangle).toBeTruthy();
-        });
-        const data = {shape: 'Triangle'};
+describe('createShape() when user selects Triangle shape', () => {
+    describe('should create a Triangle svg', () => {
+        const data = {shape: 'Triangle', shapeColor: 'red', text: 'txt', textColor: 'black' };
         const createdTriangle = createShape(data);
-        it('should return a ploygon in the svg', () => {
-            expect(createdTriangle).toContain('polygon');
+        it('should match the mock triangle svg markup', () => {
+            expect(createdTriangle).toEqual(mockTriangleSvg);
         });
     });
 });
 
-describe('createShape() for Square', () => {
-    describe('should create a Square class if user selects Square ', () => {
-        const square = new Square('red', 'txt', 'black');
-        it('should create an instance of Square class', () => {
-            expect(square instanceof Square).toBeTruthy();
-        });
-        const data = {shape: 'Square'};
+describe('createShape() when user slects Square shape', () => {
+    describe('should create a Square svg', () => {
+        const data = {shape: 'Square', shapeColor: 'red', text: 'txt', textColor: 'black' };
         const createdSquare = createShape(data);
-        it('should return a rect in the svg', () => {
-            expect(createdSquare).toContain('rect');
+        it('should match the mock square markup', () => {
+            expect(createdSquare).toEqual(mockSquareSvg);
         });
+    });
+});
+
+describe("Circle Class", () => {
+    const circle = new Circle('red', 'txt', 'black');
+    it('constructor should create an instance of Circle class', () => {
+        expect(circle instanceof Circle).toBeTruthy();
+    });
+});
+describe("Triangle Class", () => {
+    const triangle = new Triangle('red', 'txt', 'black');
+    it('constructor should create an instance of Triangle class', () => {
+        expect(triangle instanceof Triangle).toBeTruthy();
+    });
+});
+describe("Square Class", () => {
+    const square = new Square('red', 'txt', 'black');
+    it('constructor should create an instance of Square class', () => {
+        expect(square instanceof Square).toBeTruthy();
     });
 });
