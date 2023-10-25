@@ -1,53 +1,71 @@
-# svg-logo-generator
-Node.js tool to create a svg logo
+# SVG Logo Maker
+![License Badge](https://img.shields.io/badge/License-MIT-yellow.svg)  
 
 
-## psuedo code
-
-//use inquirer to accept user input
-Questions:  text, text color, shape, shape color
-
-answers stores all these values
-
-// create an svg template , and replace it with values from prompts string literls
-
-// inside lib create a shape class that is then extended by Triangle, Circle and Square and those 3 shapes are exported.
-
-//test for the shape class as well as the svg
-// If the svg is passed a color , the svg should be of that color
-
-how do we create svg =>
-//expect(shape.render()).toEqual('<polygon points="150, 18 244, 182 56, 182" fill="blue" />');
-
-how do we create svg?
-we take in 4 inputs 
-Shape Class needs to know what Color it is.
-    should have an attribute to store color!
-
-svg needs to give us a string that looks like an HTML
-svg Class optional but could provide the svg details like color, text shape and text color. 
-<!-- Size is pre defined 300x200 px  -->
-
-    Questions
-    1. what text - upto 3
-    2. text-color: string
-    3. shape: one from list
-    4. Shape color: string
+## Description
+This is a Node.js command-line application that takes in user input to generate a logo and save it as an SVG file. The tool prompts the user to select a color, shape and text for the logo, and then saves the generated SVG file to .svg extension file.
 
 
-Switch case to create an instance of the shape that the user wants
+## screen Recording
+[SVG Logo Generator working clip](https://drive.google.com/file/d/1nnpTMY2PxdIZdecz0YEeRsn6bRjWZ_Yg/view)
 
-we modify the SVG template literas to accomodate user inputs
+## Technology Used 
 
-We write the svg file to file location using writefile
+| Technology Used         | Resource URL           | 
+| ------------- |-------------| 
+| JavaScript    | [https://developer.mozilla.org/en-US/docs/Web/JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) | 
+| node.js    | [https://nodejs.org/en](https://nodejs.org/en) | 
+| Git | [https://git-scm.com/](https://git-scm.com/)     |   
+| JEST | [https://jestjs.io/](https://jestjs.io/)     |  
+ 
 
+## Installation 
+This tool is a command-line application. It requires node.js to be installed.
 
-Test
-tests should test 
-1.what functions return, 
-2.the classes are classes of that instance and 
-3.if a value is passed to class, it is set correctly. 
+## Usage
+Using a commnd-line terminal navigate to the location of the index.js file.
 
+Install dependencies by this command:
+<pre>
+npm install
+</pre>
 
-HINT !!!   test create an SVG !!!
-Check out the gitlabs folder for examples!!!
+Run this tool by using this command
+<pre>
+node index.js
+</pre>
+
+The tool then prompts the user to provide upto 3 characters for the logo.
+This is validated and user is allowed to proceed only when validation is successful.
+
+The tool then prompts the user to provide a color for text (color names like red or hex codes like #aabbcc)
+
+Next prompt is for shape from a list of Circle, Triangle and Square
+
+Next prompt is to provide a background to the shape (color names like red or hex codes like #aabbcc)
+
+After all the prompts are answered a logo.svg file is created in the examples folder.
+
+## Tests
+This application has jest tests written to test all the major classes and methods used. Tests are written for Class Shape which has all the properties and methods to create an SVG based on user provided inputs.
+
+createShape() is an important function that is responsible to create the corect type of shape based on users choice. Tests are written to cover all 3 user choices.
+
+Tests cover all the Class constructors to make sure correct instances are created. 
+
+Run the test using this command
+<pre>
+npm run test
+</pre>
+
+## Author Info
+
+Deepak Sinha
+* [Portfolio](https://dee-here.github.io/portfolio/)
+* [Github](https://github.com/dee-here)
+* [Questions ](mailto:deepakdilse@gmail.com)
+
+## License
+![License Badge](https://img.shields.io/badge/License-MIT-yellow.svg)  
+
+[License Link](https://choosealicense.com/licenses/mit/)  
